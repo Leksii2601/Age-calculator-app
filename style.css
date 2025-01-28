@@ -1,0 +1,218 @@
+body{
+  background-color: hsl(0, 0%, 94%);
+  display: flex;
+  margin:0;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  z-index: 0;
+}
+.overAll{
+  height: 500px;
+  width: 600px;
+  background-color:White;
+  font-family:'Poppins';
+  padding: 40px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 40%;
+  z-index: 1;
+}
+.date{
+  display: flex;
+}
+.days,.mouths,.years{
+  margin-right: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  color:hsl(0, 1%, 44%);
+}
+input{
+  height: 50px;
+  width: 120px;
+  margin-top: -10px;
+  font-size: 32px;
+  font-weight: 700;
+  padding-left: 10px;
+  border-radius: 5px;
+  border-color: hsl(0, 0%, 86%);
+  border-style: solid;
+  transition: 0.3s ease;
+}
+.day:focus,.mouth:focus,.year:focus{
+  border-color:hsl(259, 100%, 65%);
+  outline: none;
+  caret-color: hsl(259, 100%, 65%);
+}
+.error-invalid-year,.error-invalid-mouth,.error-invalid-day{
+  color:hsl(0, 100%, 67%);
+  font-style: italic;
+  font-weight: lighter;
+  display: none;
+}
+.required-field-day,.required-field-mouth,.required-field-year{
+  color:hsl(0, 100%, 67%);
+  font-style: italic;
+  font-weight: lighter;
+  display:none;
+}
+.lineAndButton{
+  display:flex;
+  align-items: center;
+}
+.img{
+  height: 80px;
+  width: 80px;
+  background-color: hsl(259, 100%, 65%);
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  cursor: pointer;
+  z-index: 2;
+}
+.img:hover{
+  background-color: hsl(0, 0%, 8%);
+}
+hr{
+  width: 80%;
+  margin:0;
+  border-style: solid;
+  border-color: hsl(0, 0%, 86%);
+}
+.result{
+  font-size:33px;
+  font-style:italic;
+}
+span{
+  color:hsl(259, 100%, 65%);
+}
+h1{
+  margin:0;
+}
+@media screen and (max-width: 768px) {
+  .overAll {
+    padding: 30px;
+    width: 70%;
+    margin:0 30px 0 30px;
+  }
+.lineAndButton{
+  justify-content: center;
+}
+hr{
+  position: absolute;
+  width: 70%;
+}
+  input {
+    width: 100px;
+    font-size: 28px;
+  }
+
+  .result {
+    font-size: 28px;
+  }
+}
+
+/* Mobile Large */
+@media screen and (max-width: 576px) {
+  .overAll {
+    padding: 20px;
+    border-bottom-right-radius: 20%;
+  }
+
+  .date {
+    margin-left: 5px;
+  }
+
+  input {
+    width: 80%;
+    font-size: 24px;
+    height: 45px;
+  }
+
+  .lineAndButton {
+    margin: 40px 0;
+  }
+
+  .img {
+    height: 60px;
+    width: 60px;
+    left: 50%;
+    transform: translateX(-20%);
+  }
+
+  .img img {
+    width: 25px;
+  }
+
+  .result {
+    font-size: 24px;
+  }
+
+  h1 {
+    margin: 5px 0;
+  }
+}
+
+/* Mobile Small */
+@media screen and (max-width: 375px) {
+  .overAll {
+    padding: 15px;
+  }
+
+  .date {
+
+  }
+
+  input {
+    width: 70%;
+    max-width: 250px;
+  }
+
+  .days, .mouths, .years {
+    margin-right: 0;
+  }
+
+  .result {
+    font-size: 18px;
+  }
+
+  .error-invalid-year,
+  .error-invalid-mouth,
+  .error-invalid-day,
+  .required-field-day,
+  .required-field-mouth,
+  .required-field-year {
+    font-size: 12px;
+  }
+}
+
+/* Prevent text selection on button */
+.img {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Improve input appearance on mobile */
+input {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Fix for iOS input zoom */
+@media screen and (max-width: 576px) {
+  input {
+    font-size: 16px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .img {
+    transition: none;
+  }
+}
