@@ -74,6 +74,11 @@ function calculateAge() {
     document.querySelector('.daysResult').textContent = days;
 }
 button.addEventListener('click', calculateAge);
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        calculateAge();
+    }
+});
 [day, month, year].forEach(input => {
     input.addEventListener('focus', () => {
         input.style.borderColor = 'hsl(259, 100%, 65%)';
